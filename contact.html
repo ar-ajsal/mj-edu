@@ -125,81 +125,75 @@
         <!-- Contact Area Start -->
         <section class="py-60">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mb-24 mb-lg-0">
-                        <h6 class="color-primary mb-8">–––– Contact Form</h6>
-                        <h2 class="mb-16">Write Us Anytime, We Would<br> Love To Hear From <span class="fm-sec">You!</span></h2>
-                        <p class="mb-32">Lorem ipsum dolor sit amet consectetur. Non convallis sed id <br>aliquam tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
-                        <form method="post" action="contact.html" class="contact-form form-validator">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="mb-24">
-                                        <input type="text" class="form-control p_lg" id="name" name="name" required placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="mb-24">
-                                        <input type="text" class="form-control p_lg" id="last-name" name="last-name" required placeholder="Last Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="mb-24">
-                                        <input type="email" class="form-control p_lg" id="email" name="email" required placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="mb-24">
-                                        <input type="text" class="form-control p_lg" id="subject" name="subject" required placeholder="Subject">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-24">
-                                <textarea class="form-control p_lg" id="detail-message" name="message" rows="5" required placeholder="Message"></textarea>
-                            </div>
-                            <div class="text-end">
-                                <button type="submit" class="educate-btn"><span class="educate-btn__curve"></span>Send
-                                    Message</button>
-                            </div>
-                            <!-- Alert Message -->
-                            <div id="alert-message" class="alert-msg"></div>
-                        </form>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="educate-tilt" data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
-                            <img src="assets/media/resources/contat.png" alt="">
+            <div class="row"></div>
+                <div class="col-lg-6 mb-24 mb-lg-0">
+                <h6 class="color-primary mb-8">–––– Contact Form</h6>
+                <h2 class="mb-16">Write Us Anytime, We Would<br> Love To Hear From <span class="fm-sec">You!</span></h2>
+                <p class="mb-32">Need more details? Just drop us a message — we're always happy to help!</p>
+                <form method="POST" action="https://api.web3forms.com/submit" class="contact-form form-validator">
+                    <input type="hidden" name="access_key" value="b34d7e3a-14df-403c-a5cb-1ec2d02d1d32">
+                    <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-24">
+                        <input type="text" class="form-control p_lg" name="name" required placeholder="First Name">
                         </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="mb-24">
+                        <input type="text" class="form-control p_lg" name="last_name" required placeholder="Last Name">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-24">
+                        <input type="email" class="form-control p_lg" name="email" required placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="mb-24">
+                        <input type="text" class="form-control p_lg" name="subject" required placeholder="Subject">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="mb-24">
+                    <textarea class="form-control p_lg" name="message" rows="5" required placeholder="Message"></textarea>
+                    </div>
+                    <div class="text-end">
+                    <button type="submit" class="educate-btn"><span class="educate-btn__curve"></span>Send Message</button>
+                    </div>
+                </form>
+                </div>
+                <div class="col-lg-6">
+                <div class="educate-tilt" data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
+                    <img src="assets/media/resources/contat.png" alt="">
+                </div>
+                </div>
+            </div>
+            <div class="contact_links pt-60">
+                <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact_link_block mb-48 mb-lg-0">
+                    <div class="icon"><i class="fal fa-map-marker-alt"></i></div>
+                    <h6 class="dark-gray">1 The edge offices bc road,vidyanagar,kasargod.</h6>
                     </div>
                 </div>
-                <div class="contact_links pt-60">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="contact_link_block mb-48 mb-lg-0">
-                                <div class="icon">
-                                    <i class="fal fa-map-marker-alt"></i>
-                                </div>
-                                <h6 class="dark-gray">1 The edge offices bc road,vidyanagar,kasargod.</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="tel:123456789" class="contact_link_block mb-48 mb-lg-0">
-                                <div class="icon">
-                                    <i class="fal fa-phone-alt"></i>
-                                </div>
-                                <span class="h6">+91 95396 27170</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="mailto:- mjinstitute888@gmail.com
-" class="contact_link_block">
-                                <div class="icon">
-                                    <i class="fal fa-envelope"></i>
-                                </div>
-                                <span class="h6">- mjinstitute888@gmail.com
-</span>
-                            </a>
-                        </div>
+                <div class="col-lg-4">
+                    <a href="tel:123456789" class="contact_link_block mb-48 mb-lg-0">
+                    <div class="icon"><i class="fal fa-phone-alt"></i></div>
+                    <span class="h6">+91 95396 27170</span>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="mailto:mjinstitute888@gmail.com" class="contact_link_block">
+                    <div class="icon"><i class="fal fa-envelope"></i></div>
+                    <span class="h6">mjinstitute888@gmail.com</span>
+                    </a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
                     </div>
                 </div>
             </div>
