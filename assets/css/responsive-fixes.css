@@ -1,0 +1,110 @@
+/* ============================================
+   RESPONSIVE FIXES FOR MENU AND FOOTER
+   ============================================ */
+
+/* Mobile Menu Button - Ensure Visibility */
+.mobile-nav__toggler {
+    display: none !important;
+    position: relative;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+    .mobile-nav__toggler {
+        display: block !important;
+    }
+}
+
+/* Ensure menu button icon is visible */
+.mobile-nav__toggler i {
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+/* Footer Responsive Fixes */
+footer {
+    text-align: center;
+    padding: 24px 16px !important;
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+footer a {
+    word-break: break-word;
+    display: inline-block;
+}
+
+/* Mobile Footer Adjustments */
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 12px !important;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+
+    footer a {
+        font-size: 14px;
+    }
+}
+
+/* Ensure header is responsive */
+@media (max-width: 1199px) {
+    .main-menu__nav {
+        display: none;
+    }
+
+    .main-menu__search,
+    .main-menu__login {
+        display: none !important;
+    }
+}
+
+/* Fix header spacing on mobile */
+@media (max-width: 768px) {
+    .main-menu {
+        padding: 12px 0;
+    }
+
+    .main-menu__logo img {
+        max-height: 50px !important;
+    }
+}
+
+/* CTA Section Responsive */
+@media (max-width: 768px) {
+    .cta-section h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .cta-section .lead {
+        font-size: 1rem !important;
+    }
+
+    .cta-section .btn {
+        padding: 12px 24px !important;
+        font-size: 14px !important;
+        margin-bottom: 12px;
+    }
+}
+
+/* Fix button wrapping on mobile */
+@media (max-width: 576px) {
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 12px !important;
+    }
+
+    .me-3 {
+        margin-right: 0 !important;
+    }
+}

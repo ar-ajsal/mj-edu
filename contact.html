@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Educate Html 5 Template">
-
-    <title>Educate || Html 5 Template For Education & LMS</title>
-
+    <title>MJ EDU</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png">
 
@@ -21,6 +19,8 @@
     <link rel="stylesheet" href="assets/vendor/odometer/odometer.min.css">
     <link rel="stylesheet" href="assets/vendor/nice-select/nice-select.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/professional.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -64,14 +64,15 @@
     <!-- Main Wrapper Start -->
     <div id="main-wrapper" class="main-wrapper">
         <!-- Header Area start -->
-       <header>
+        <header>
             <nav class="main-menu">
                 <div class="container">
                     <div class="main-menu__block">
                         <div class="main-menu__left">
                             <div class="main-menu__logo">
                                 <a href="index.html">
-                                    <img src="assets/media/logo.png" alt="Educate" style="max-height:60px; width:auto; display:block;">
+                                    <img src="assets/media/logo.png" alt="Educate"
+                                        style="max-height:60px; width:auto; display:block;">
                                 </a>
                             </div>
                             <div class="main-menu__nav">
@@ -90,7 +91,8 @@
                             <a href="login.html" class="main-menu__login">
                                 <i class="fal fa-user"></i>
                             </a>
-                            <a href="contact.html" class="educate-btn sm d-xl-flex d-none"><span class="educate-btn__curve"></span>Enroll Now</a>
+                            <a href="contact.html" class="educate-btn sm d-xl-flex d-none"><span
+                                    class="educate-btn__curve"></span>Enroll Now</a>
                             <a href="#" class="main-menu__toggler mobile-nav__toggler">
                                 <i class="fa fa-bars"></i>
                             </a>
@@ -113,7 +115,8 @@
                         <h1>Contact Us</h1>
                         <img src="assets/media/shapes/tag-2.png" alt="" class="tag">
                     </div>
-                    <div class="educate-tilt" data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
+                    <div class="educate-tilt"
+                        data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
                         <img src="assets/media/resources/page_title.png" alt="" class="main_img">
                     </div>
                     <img src="assets/media/shapes/circle-lines-2.png" alt="" class="circle_vector">
@@ -125,176 +128,99 @@
         <!-- Contact Area Start -->
         <section class="py-60">
             <div class="container">
-            <div class="row"></div>
+                <div class="row"></div>
                 <div class="col-lg-6 mb-24 mb-lg-0">
-                <h6 class="color-primary mb-8">–––– Contact Form</h6>
-                <h2 class="mb-16">Write Us Anytime, We Would<br> Love To Hear From <span class="fm-sec">You!</span></h2>
-                <p class="mb-32">Need more details? Just drop us a message — we're always happy to help!</p>
-                <form method="POST" action="https://api.web3forms.com/submit" class="contact-form form-validator">
-                    <input type="hidden" name="access_key" value="b34d7e3a-14df-403c-a5cb-1ec2d02d1d32">
-                    <div class="row">
-                    <div class="col-sm-6">
-                        <div class="mb-24">
-                        <input type="text" class="form-control p_lg" name="name" required placeholder="First Name">
+                    <h6 class="color-primary mb-8">–––– Contact Form</h6>
+                    <h2 class="mb-16">Write Us Anytime, We Would<br> Love To Hear From <span class="fm-sec">You!</span>
+                    </h2>
+                    <p class="mb-32">Have questions about our programs or batch timings? Send us your details and we'll
+                        respond within 24 hours.</p>
+                    <form id="contactForm" class="contact-form">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mb-24">
+                                    <input type="text" class="form-control p_lg" id="name" required
+                                        placeholder="Full Name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="mb-24">
+                                    <input type="tel" class="form-control p_lg" id="phone" required
+                                        placeholder="Phone Number">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="mb-24">
-                        <input type="text" class="form-control p_lg" name="last_name" required placeholder="Last Name">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mb-24">
+                                    <input type="email" class="form-control p_lg" id="email" required
+                                        placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="mb-24">
+                                    <input type="text" class="form-control p_lg" id="course" required
+                                        placeholder="Preferred Batch Timing (Morning/Evening/Sunday)">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-sm-6">
                         <div class="mb-24">
-                        <input type="email" class="form-control p_lg" name="email" required placeholder="Email">
+                            <textarea class="form-control p_lg" id="message" rows="5"
+                                placeholder="Additional Message (Optional)"></textarea>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="mb-24">
-                        <input type="text" class="form-control p_lg" name="subject" required placeholder="Subject">
+                        <div class="text-end">
+                            <button type="submit" class="educate-btn"><span class="educate-btn__curve"></span>Send to
+                                WhatsApp</button>
                         </div>
-                    </div>
-                    </div>
-                    <div class="mb-24">
-                    <textarea class="form-control p_lg" name="message" rows="5" required placeholder="Message"></textarea>
-                    </div>
-                    <div class="text-end">
-                    <button type="submit" class="educate-btn"><span class="educate-btn__curve"></span>Send Message</button>
-                    </div>
-                </form>
+                        <p class=\"text-muted small mt-3\">
+                            <i class=\"fas fa-info-circle me-2\"></i>
+                            Your enquiry will be sent directly to our WhatsApp. We typically respond within a few hours
+                            during business days.
+                        </p>
+                    </form>
                 </div>
                 <div class="col-lg-6">
-                <div class="educate-tilt" data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
-                    <img src="assets/media/resources/contat.png" alt="">
-                </div>
+                    <div class="educate-tilt"
+                        data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
+                        <img src="assets/media/resources/contat.png" alt="">
+                    </div>
                 </div>
             </div>
             <div class="contact_links pt-60">
                 <div class="row">
-                <div class="col-lg-4">
-                    <div class="contact_link_block mb-48 mb-lg-0">
-                    <div class="icon"><i class="fal fa-map-marker-alt"></i></div>
-                    <h6 class="dark-gray">1 The edge offices bc road,vidyanagar,kasargod.</h6>
+                    <div class="col-lg-4">
+                        <div class="contact_link_block mb-48 mb-lg-0">
+                            <div class="icon"><i class="fal fa-map-marker-alt"></i></div>
+                            <h6 class="dark-gray">The Edge Offices, BC Road, Vidyanagar, Kasaragod, Kerala</h6>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <a href="tel:123456789" class="contact_link_block mb-48 mb-lg-0">
-                    <div class="icon"><i class="fal fa-phone-alt"></i></div>
-                    <span class="h6">+91 95396 27170</span>
-                    </a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="mailto:mjinstitute888@gmail.com" class="contact_link_block">
-                    <div class="icon"><i class="fal fa-envelope"></i></div>
-                    <span class="h6">mjinstitute888@gmail.com</span>
-                    </a>
-                </div>
-                </div>
-            </div>
-            </div>
-        </section>
+                    <div class="col-lg-4">
+                        <a href="tel:+919037999887" class="contact_link_block mb-48 mb-lg-0">
+                            <div class="icon"><i class="fal fa-phone-alt"></i></div>
+                            <span class="h6">+91 90379 99887</span>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="mailto:mjinstitute888@gmail.com" class="contact_link_block">
+                            <div class="icon"><i class="fal fa-envelope"></i></div>
+                            <span class="h6">mjinstitute888@gmail.com</span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Contact Area End -->
+    </div>
+    </section>
+    <!-- Contact Area End -->
 
-        <!-- Footer Area Start -->
-        <footer>
-            <div class="footer_main py-60">
-                <img src="assets/media/shapes/vector-7.png" alt="" class="vector_shape">
-                <img src="assets/media/shapes/dots-1.png" alt="" class="dots">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 ">
-                            <div class="footer_widget">
-                                <a href="index.html" class="mb-8"><img src="assets/media/logo.png" alt=""></a>
-                                <p class="description_text">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam tempus. Volutpat tortor tincidunt egestas sit risus donec.</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer_widget">
-                                <h5 class="medium-black mb-16">Quick Links</h5>
-                                <ul class="unstyled list">
-                                    <li><a href=""><i class="fad fa-chevron-right"></i>Courses</a></li>
-                                    <li><a href=""><i class="fad fa-chevron-right"></i>Join a Career</a></li>
-                                    <li><a href=""><i class="fad fa-chevron-right"></i>Upcoming Events</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer_widget">
-                                <h5 class="medium-black mb-16">Explore</h5>
-                                <ul class="unstyled list">
-                                    <li><a href="about.html"><i class="fad fa-chevron-right"></i>About Us</a></li>
-                                    <li><a href="gallery.html"><i class="fad fa-chevron-right"></i>Gallery</a></li>
-                                    <li><a href="team-detail.html"><i class="fad fa-chevron-right"></i>Teacher’s Detail</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="footer_widget">
-                                <h5 class="medium-black mb-16">Information</h5>
-                                <ul class="unstyled list">
-                                    <li><a href="login.html"><i class="fad fa-chevron-right"></i>Login</a></li>
-                                    <li><a href="register.html"><i class="fad fa-chevron-right"></i>Register</a></li>
-                                    <li><a href="contact.html"><i class="fad fa-chevron-right"></i>Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="footer_widget">
-                                <h5 class="medium-black mb-16">Contact Us</h5>
-                                <ul class="unstyled list">
-                                    <li class="mb-16"><i class="fal fa-map-marker-alt"></i>631 Elgin ST. Celina, State 111111
-                                    </li>
-                                    <li class="mb-16"><a href="mailto:info@example.com"><i
-                                                class="fal fa-envelope"></i>email@example.com</a></li>
-                                    <li><a href="tel:123456789"><i class="fal fa-phone-alt"></i>+1 234 567 890</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-row">
-                        <ul class="unstyled social_icons_list">
-                            <li>
-                                <a href="">
-                                    <img src="assets/media/icons/brands/Instagram.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="assets/media/icons/brands/Facebook.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="assets/media/icons/brands/Twitter.png" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="assets/media/icons/brands/Linkedin.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="newsletter_block">
-                            <h5>Newsletter</h5>
-                            <form class="newsletter">
-                                <input type="email" class="form-control" required placeholder="Your email">
-                                <button type="submit" class="educate-btn sm"><span
-                                        class="educate-btn__curve"></span>Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright_row">
-                <p>©2025 Educate All Rights Reserved.</p>
-            </div>
-        </footer>
-        <!-- Footer Area End -->
+    <!-- Footer Area Start -->
+    <footer>
+        <div class="container">
+            <p class="mb-1">© 2025 MJ Institute of Technology. All Rights Reserved.</p>
+            <p>Call: <a href="tel:+919037999887" class="text-primary text-decoration-none fw-bold">+91 98765
+                    43210</a></p>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
 
     </div>
 
@@ -310,9 +236,7 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:- mjinstitute888@gmail.com
-">- mjinstitute888@gmail.com
-</a>
+                    <a href="mailto:mjinstitute888@gmail.com">mjinstitute888@gmail.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
@@ -363,6 +287,42 @@
 
     <!-- Site Scripts -->
     <script src="assets/js/app.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+
+    <!-- WhatsApp Form Integration -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const course = document.getElementById('course').value;
+            const message = document.getElementById('message').value;
+
+            // Create WhatsApp message template
+            let whatsappMessage = `*New Enquiry from Website*%0A%0A`;
+            whatsappMessage += `*Name:* ${encodeURIComponent(name)}%0A`;
+            whatsappMessage += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+            whatsappMessage += `*Email:* ${encodeURIComponent(email)}%0A`;
+            whatsappMessage += `*Course Interested:* ${encodeURIComponent(course)}%0A`;
+            if (message) {
+                whatsappMessage += `*Message:* ${encodeURIComponent(message)}%0A`;
+            }
+
+            // WhatsApp number (replace with your actual number)
+            const whatsappNumber = '919539627170';
+
+            // Open WhatsApp
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+
+            // Optional: Reset form
+            this.reset();
+        });
+    </script>
 </body>
 
 </html>
