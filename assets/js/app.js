@@ -3,20 +3,20 @@
 // Description: Educate Html 5 Template
 // Version: 1.0.0
 
-(function(window, document, $, undefined) {
+(function (window, document, $, undefined) {
     "use strict";
     var Init = {
-        i: function(e) {
+        i: function (e) {
             Init.s();
             Init.methods();
         },
-        s: function(e) {
+        s: function (e) {
             (this._window = $(window)),
-            (this._document = $(document)),
-            (this._body = $("body")),
-            (this._html = $("html"));
+                (this._document = $(document)),
+                (this._body = $("body")),
+                (this._html = $("html"));
         },
-        methods: function(e) {
+        methods: function (e) {
             Init.w();
             Init.BackToTop();
             Init.preloader();
@@ -33,25 +33,26 @@
             Init.initializeSlick();
             Init.formValidation();
             Init.contactForm();
+            Init.localVideoPopup();
         },
 
-        w: function(e) {
+        w: function (e) {
             this._window.on("load", Init.l).on("scroll", Init.res);
         },
 
         /*-- Back-to-top --*/
-        BackToTop: function() {
+        BackToTop: function () {
             let scrollTop = $(".scroll-top path");
             if (scrollTop.length) {
                 var e = document.querySelector(".scroll-top path"),
                     t = e.getTotalLength();
                 (e.style.transition = e.style.WebkitTransition = "none"),
-                (e.style.strokeDasharray = t + " " + t),
-                (e.style.strokeDashoffset = t),
-                e.getBoundingClientRect(),
+                    (e.style.strokeDasharray = t + " " + t),
+                    (e.style.strokeDashoffset = t),
+                    e.getBoundingClientRect(),
                     (e.style.transition = e.style.WebkitTransition =
                         "stroke-dashoffset 10ms linear");
-                var o = function() {
+                var o = function () {
                     var o = $(window).scrollTop(),
                         r = $(document).height() - $(window).height(),
                         i = t - (o * t) / r;
@@ -60,7 +61,7 @@
                 o(), $(window).scroll(o);
                 var back = $(".scroll-top"),
                     body = $("body, html");
-                $(window).on("scroll", function() {
+                $(window).on("scroll", function () {
                     if ($(window).scrollTop() > $(window).height()) {
                         back.addClass("scroll-top--active");
                     } else {
@@ -70,13 +71,13 @@
             }
         },
         // PreLoader
-        preloader: function() {
-            setTimeout(function() {
+        preloader: function () {
+            setTimeout(function () {
                 $("#preloader").hide("slow");
             }, 2000);
         },
         // Wow
-        wow: function() {
+        wow: function () {
             if ($(".wow").length) {
                 var wow = new WOW({
                     boxClass: "wow", // animated element css class (default is wow)
@@ -88,7 +89,7 @@
             }
         },
         // Magnifying Popup
-        magnifying: function() {
+        magnifying: function () {
             if ($(".video-popup").length) {
                 $(".video-popup").magnificPopup({
                     type: "iframe",
@@ -99,18 +100,49 @@
                 });
             }
         },
+        // Local Video Popup
+        localVideoPopup: function () {
+            if ($(".local-video-popup").length) {
+                $(".local-video-popup").magnificPopup({
+                    type: "inline",
+                    mainClass: "mfp-fade",
+                    removalDelay: 160,
+                    preloader: true,
+                    fixedContentPos: true,
+                    callbacks: {
+                        open: function () {
+                            const video = document.getElementById('intro-vid-player');
+                            if (video) {
+                                video.muted = false;
+                                video.play();
+                            }
+                            setTimeout(() => {
+                                const inst = document.getElementById('vid-instruction');
+                                if (inst) inst.style.opacity = '0';
+                            }, 3000);
+                        },
+                        close: function () {
+                            const video = document.getElementById('intro-vid-player');
+                            if (video) {
+                                video.pause();
+                                video.currentTime = 0;
+                            }
+                        }
+                    }
+                });
+            }
+        },
         // Nice Select
-        niceSelect: function() {
+        niceSelect: function () {
             if ($(".has-nice-select").length) {
                 $(".has-nice-select, .contact-form select").niceSelect();
             }
         },
-
         // Tilt
-        tilt: function() {
+        tilt: function () {
             let educateTiltElm = $(".educate-tilt");
             if (educateTiltElm.length) {
-                educateTiltElm.each(function() {
+                educateTiltElm.each(function () {
                     let self = $(this);
                     let options = self.data("tilt-options");
                     let educateTilt = self.tilt(
@@ -120,11 +152,11 @@
             }
         },
         // odometer
-        odometer: function() {
+        odometer: function () {
             if ($(".count_one").length) {
-                $(".count_one").appear(function(e) {
+                $(".count_one").appear(function (e) {
                     var odo = $(".count_one");
-                    odo.each(function() {
+                    odo.each(function () {
                         var countNumber = $(this).attr("data-count");
                         $(this).html(countNumber);
                     });
@@ -132,17 +164,17 @@
             }
         },
         // Header
-        header: function() {
+        header: function () {
             function dynamicCurrentMenuClass(selector) {
                 let FileName = window.location.href.split("/").reverse()[0];
 
-                selector.find("li").each(function() {
+                selector.find("li").each(function () {
                     let anchor = $(this).find("a");
                     if ($(anchor).attr("href") == FileName) {
                         $(this).addClass("current");
                     }
                 });
-                selector.children("li").each(function() {
+                selector.children("li").each(function () {
                     if ($(this).find(".current").length) {
                         $(this).addClass("current");
                     }
@@ -176,15 +208,15 @@
                 let dropdownAnchor = $(
                     ".mobile-nav__container .main-menu__list .dropdown > a"
                 );
-                dropdownAnchor.each(function() {
+                dropdownAnchor.each(function () {
                     let self = $(this);
                     let toggleBtn = document.createElement("BUTTON");
                     toggleBtn.setAttribute("aria-label", "dropdown toggler");
                     toggleBtn.innerHTML = "<i class='fa fa-angle-down'></i>";
-                    self.append(function() {
+                    self.append(function () {
                         return toggleBtn;
                     });
-                    self.find("button").on("click", function(e) {
+                    self.find("button").on("click", function (e) {
                         e.preventDefault();
                         let self = $(this);
                         self.toggleClass("expanded");
@@ -195,14 +227,14 @@
             }
 
             if ($(".mobile-nav__toggler").length) {
-                $(".mobile-nav__toggler").on("click", function(e) {
+                $(".mobile-nav__toggler").on("click", function (e) {
                     e.preventDefault();
                     $(".mobile-nav__wrapper").toggleClass("expanded");
                     $("body").toggleClass("locked");
                 });
             }
 
-            $(window).on("scroll", function() {
+            $(window).on("scroll", function () {
                 if ($(".stricked-menu").length) {
                     var headerScrollPos = 130;
                     var stricky = $(".stricked-menu");
@@ -216,9 +248,9 @@
         },
 
         // Search Toggle
-        searchToggle: function() {
+        searchToggle: function () {
             if ($(".search-toggler").length) {
-                $(".search-toggler").on("click", function(e) {
+                $(".search-toggler").on("click", function (e) {
                     e.preventDefault();
                     $(".search-popup").toggleClass("active");
                     $(".mobile-nav__wrapper").removeClass("expanded");
@@ -228,31 +260,31 @@
         },
 
         // Cursor
-        cursor: function() {
+        cursor: function () {
             if ($(".custom-cursor").length) {
                 var cursor = document.querySelector(".custom-cursor__cursor");
                 var cursorinner = document.querySelector(".custom-cursor__cursor-two");
                 var a = document.querySelectorAll("a");
 
-                document.addEventListener("mousemove", function(e) {
+                document.addEventListener("mousemove", function (e) {
                     var x = e.clientX;
                     var y = e.clientY;
                     cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
                 });
 
-                document.addEventListener("mousemove", function(e) {
+                document.addEventListener("mousemove", function (e) {
                     var x = e.clientX;
                     var y = e.clientY;
                     cursorinner.style.left = x + "px";
                     cursorinner.style.top = y + "px";
                 });
 
-                document.addEventListener("mousedown", function() {
+                document.addEventListener("mousedown", function () {
                     cursor.classList.add("click");
                     cursorinner.classList.add("custom-cursor__innerhover");
                 });
 
-                document.addEventListener("mouseup", function() {
+                document.addEventListener("mouseup", function () {
                     cursor.classList.remove("click");
                     cursorinner.classList.remove("custom-cursor__innerhover");
                 });
@@ -268,10 +300,10 @@
             }
         },
         // Count Down
-        countdownInit: function(countdownSelector, countdownTime) {
+        countdownInit: function (countdownSelector, countdownTime) {
             var eventCounter = $(countdownSelector);
             if (eventCounter.length) {
-                eventCounter.countdown(countdownTime, function(e) {
+                eventCounter.countdown(countdownTime, function (e) {
                     var past = parseInt(e.offset.seconds + 3);
                     var html = "";
                     for (let i = past; i > e.offset.seconds; i--) {
@@ -305,14 +337,14 @@
             }
         },
         // Form validation
-        formValidation: function() {
+        formValidation: function () {
             if ($(".form-validator").length) {
                 $(".form-validator").validate();
             }
         },
         // Contact Form
-        contactForm: function() {
-            $(".contact-form").on("submit", function(e) {
+        contactForm: function () {
+            $(".contact-form").on("submit", function (e) {
                 e.preventDefault();
                 if ($(".contact-form").valid()) {
                     var _self = $(this);
@@ -326,7 +358,7 @@
                         type: "post",
                         dataType: "json",
                         data: data,
-                        success: function(data) {
+                        success: function (data) {
                             $(".contact-form").trigger("reset");
                             _self.find('button[type="submit"]').removeAttr("disabled");
                             if (data.success) {
@@ -338,7 +370,7 @@
                             }
                             $("#messages").show("slow");
                             $("#messages").slideDown("slow");
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $("#messages").slideUp("hide");
                                 $("#messages").hide("slow");
                             }, 4000);
@@ -350,8 +382,8 @@
             });
         },
         // Password Hide
-        passwordHide: function() {
-            $(".toggle-password").click(function() {
+        passwordHide: function () {
+            $(".toggle-password").click(function () {
                 var passwordField = $($(this).attr("toggle"));
                 var icon = $(this).find("i");
 
@@ -365,7 +397,7 @@
             });
         },
         // Slick Slider
-        initializeSlick: function(e) {
+        initializeSlick: function (e) {
             if ($(".brands-slider").length) {
                 $(".brands-slider").slick({
                     slidesToShow: 6,
@@ -379,35 +411,35 @@
                     pauseOnFocus: false,
                     pauseOnHover: false,
                     responsive: [{
-                            breakpoint: 1599,
-                            settings: {
-                                slidesToShow: 5,
-                            },
+                        breakpoint: 1599,
+                        settings: {
+                            slidesToShow: 5,
                         },
-                        {
-                            breakpoint: 1399,
-                            settings: {
-                                slidesToShow: 4,
-                            },
+                    },
+                    {
+                        breakpoint: 1399,
+                        settings: {
+                            slidesToShow: 4,
                         },
-                        {
-                            breakpoint: 992,
-                            settings: {
-                                slidesToShow: 3,
-                            },
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 3,
                         },
-                        {
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 2,
-                            },
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 492,
-                            settings: {
-                                slidesToShow: 1,
-                            },
+                    },
+                    {
+                        breakpoint: 492,
+                        settings: {
+                            slidesToShow: 1,
                         },
+                    },
                     ],
                 });
             }
@@ -422,29 +454,29 @@
                     autoplay: true,
                     autoplaySpeed: 3000,
                     responsive: [{
-                            breakpoint: 1799,
-                            settings: {
-                                slidesToShow: 2,
-                            },
+                        breakpoint: 1799,
+                        settings: {
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 992,
-                            settings: {
-                                slidesToShow: 1,
-                            },
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 1,
                         },
-                        {
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 2,
-                            },
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 650,
-                            settings: {
-                                slidesToShow: 1,
-                            },
+                    },
+                    {
+                        breakpoint: 650,
+                        settings: {
+                            slidesToShow: 1,
                         },
+                    },
                     ],
                 });
             }
@@ -461,41 +493,41 @@
                     variableWidth: true,
                     variableHeight: true,
                     responsive: [{
-                            breakpoint: 1599,
-                            settings: {
-                                slidesToShow: 3,
-                            },
+                        breakpoint: 1599,
+                        settings: {
+                            slidesToShow: 3,
                         },
-                        {
-                            breakpoint: 1399,
-                            settings: {
-                                slidesToShow: 2,
-                            },
+                    },
+                    {
+                        breakpoint: 1399,
+                        settings: {
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 1199,
-                            settings: {
-                                slidesToShow: 3,
-                            },
+                    },
+                    {
+                        breakpoint: 1199,
+                        settings: {
+                            slidesToShow: 3,
                         },
-                        {
-                            breakpoint: 900,
-                            settings: {
-                                slidesToShow: 2,
-                            },
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 767,
-                            settings: {
-                                slidesToShow: 2,
-                            },
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
                         },
-                        {
-                            breakpoint: 575,
-                            settings: {
-                                slidesToShow: 1,
-                            },
+                    },
+                    {
+                        breakpoint: 575,
+                        settings: {
+                            slidesToShow: 1,
                         },
+                    },
                     ],
                 });
             }
@@ -514,7 +546,7 @@
                         settings: {
                             slidesToShow: 1,
                         },
-                    }, ],
+                    },],
                 });
             }
             if ($(".testimonials_slider_2").length) {
@@ -538,7 +570,7 @@
                             centerPadding: "0%",
                             variableWidth: true,
                         },
-                    }, ],
+                    },],
                 });
             }
         },

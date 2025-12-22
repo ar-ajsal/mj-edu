@@ -22,38 +22,21 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="custom-cursor locked">
+<body class="custom-cursor">
     <!-- cursor style -->
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
     <!-- Preloader-->
     <div id="preloader">
-        <div class="book">
-            <div class="inner">
-                <div class="left"></div>
-                <div class="middle"></div>
-                <div class="right"></div>
-            </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="spinner">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
     <!-- Main Wrapper Start -->
@@ -80,12 +63,6 @@
                             </div>
                         </div>
                         <div class="main-menu__right">
-                            <a href="#" class="main-menu__search search-toggler">
-                                <i class="fal fa-search"></i>
-                            </a>
-                            <a href="login.html" class="main-menu__login">
-                                <i class="fal fa-user"></i>
-                            </a>
                             <a href="contact.html" class="educate-btn sm d-xl-flex d-none"><span
                                     class="educate-btn__curve"></span>Contact Us</a>
                             <a href="#" class="main-menu__toggler mobile-nav__toggler">
@@ -127,14 +104,14 @@
                                 </div>
 
                                 <!-- VIDEO BUTTON -->
-                                <div class="video-btn wow zoomIn" data-wow-delay="700ms">
+                                <div class="video-btn wow zoomIn animated" data-wow-delay="700ms"
+                                    style="visibility: visible; animation-delay: 700ms; animation-name: zoomIn;">
                                     <img src="assets/media/banners/hero-banner-1/round-text.png" alt=""
                                         class="text-vector">
-                                    <a href="https://www.youtube.com/watch?v=8nXX1WOuvk" class="play-btn video-popup">
+                                    <a href="#intro-video" class="play-btn local-video-popup">
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -464,8 +441,8 @@
                         <div class="course__category__card_1 mb-24">
                             <div class="course__category__card_text">
                                 <a href="courses.html" class="course__category__card_title h4 mb-16">Editing</a>
-                                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                                    tempus.</p>
+                                <p class="mb-40">Master the art of video post-production with professional editing
+                                    techniques.</p>
                                 <ul class="category__info p-0 mb-8">
                                     <li><i class="fas fa-star"></i>5</li>
                                     <!-- <li><i class="fal fa-graduation-cap"></i>10 Teachers</li> -->
@@ -481,8 +458,8 @@
                         <div class="course__category__card_1 mb-24">
                             <div class="course__category__card_text">
                                 <a href="courses.html" class="course__category__card_title h4 mb-16">Graphic Design</a>
-                                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                                    tempus.</p>
+                                <p class="mb-40">Learn visual communication using industry-standard tools for impactful
+                                    designs.</p>
                                 <ul class="category__info p-0 mb-8">
                                     <li><i class="fas fa-star"></i>5</li>
                                     <!-- <li><i class="fal fa-graduation-cap"></i>10 Teachers</li> -->
@@ -499,8 +476,8 @@
                             <div class="course__category__card_text">
                                 <a href="courses.html" class="course__category__card_title h4 mb-16">Artificial
                                     Intelligence</a>
-                                <p class="mb-40">Lorem ipsum dolor sit amet consectetur. Non convallis sed id aliquam
-                                    tempus.</p>
+                                <p class="mb-40">Explore the capabilities of AI to enhance creativity and automate
+                                    workflows.</p>
                                 <ul class="category__info p-0 mb-8">
                                     <li><i class="fas fa-star"></i>5</li>
                                     <!-- <li><i class="fal fa-graduation-cap"></i>10 Teachers</li> -->
@@ -711,8 +688,15 @@
         <footer>
             <div class="container">
                 <p class="mb-1">© 2025 MJ Institute of Technology. All Rights Reserved.</p>
-                <p>Call: <a href="tel:+919037999887" class="text-primary text-decoration-none fw-bold">+91 90379
+                <p class="mb-1">Call: <a href="tel:+919037999887" class="text-primary text-decoration-none fw-bold">+91
+                        90379
                         99887</a></p>
+                <div class="social-links mt-3">
+                    <a href="https://www.instagram.com/mj.institute._/" target="_blank" class="text-primary me-3"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                </div>
             </div>
         </footer>
 
@@ -720,6 +704,28 @@
         <script>AOS.init({ duration: 800, once: true });</script>
 
         <!-- back-to-top-end -->
+        <div class="mobile-nav__wrapper">
+            <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+            <div class="mobile-nav__content">
+                <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+                <div class="logo-box">
+                    <a href="index.html" aria-label="logo image"><img src="assets/media/logo.png" width="155"
+                            alt="" /></a>
+                </div>
+                <div class="mobile-nav__container"></div>
+                <ul class="mobile-nav__contact list-unstyled">
+                    <li>
+                        <i class="fa fa-phone-alt"></i>
+                        <a href="tel:+919037999887">+91 90379 99887</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/mj.institute._/" target="_blank">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Jquery Js -->
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/vendor/jquery/jquery-3.6.3.min.js"></script>
@@ -732,6 +738,23 @@
         <script src="assets/vendor/wow/wow.js"></script>
         <!-- Site Scripts -->
         <script src="assets/js/app.js"></script>
+
+        <!-- Video Popup Content -->
+        <div id="intro-video" class="mfp-hide"
+            style="max-width: 900px; margin: 0 auto; background: #000; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <video id="intro-vid-player" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    loop muted playsinline>
+                    <source src="assets/media/mjvid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Instruction overlay that disappears -->
+            <div id="vid-instruction"
+                style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; background: rgba(0,0,0,0.6); padding: 5px 15px; border-radius: 20px; font-size: 12px; pointer-events: none; transition: opacity 1s;">
+                Introduction Video
+            </div>
+        </div>
 </body>
 
 </html>

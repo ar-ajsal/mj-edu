@@ -11,9 +11,13 @@
    ============================================ */
 :root {
     /* Colors */
-    --primary-accent: #0066cc;
-    --primary-dark: #004c99;
-    --text-primary: #2c3e50;
+    /* Colors - Modern Indigo Theme */
+    --primary-accent: #6366f1;
+    /* Indigo 500 */
+    --primary-dark: #4338ca;
+    /* Indigo 700 */
+    --text-primary: #1e293b;
+    /* Slate 800 */
     --text-secondary: #5a6c7d;
     --text-light: #7f8c9a;
     --bg-white: #ffffff;
@@ -264,7 +268,8 @@ footer {
     background: var(--text-primary);
     color: var(--bg-white);
     padding: var(--space-xl) 0;
-    margin-top: var(--space-3xl);
+    margin-top: 0 !important;
+    /* Removed large margin to fix white space */
 }
 
 footer p {
@@ -416,4 +421,25 @@ footer a:hover {
     background: var(--primary-accent);
     color: var(--bg-white);
     border-color: var(--primary-accent);
+}
+
+/* Cursor Fixes - Ensure custom cursor does not block clicks */
+.custom-cursor__cursor,
+.custom-cursor__cursor-two {
+    pointer-events: none !important;
+    z-index: 10000 !important;
+    /* Ensure they are visible but non-interactive */
+}
+
+/* Ensure mobile nav links are clickable */
+.mobile-nav__wrapper .mobile-nav__content .main-menu__list li a {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 20;
+}
+
+/* Ensure overlay allows closing but doesn't block content interactions if mis-layered */
+.mobile-nav__wrapper .mobile-nav__content {
+    z-index: 10001 !important;
+    /* Higher than cursor if needed, but standard is fine */
 }

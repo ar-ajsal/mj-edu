@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="custom-cursor locked">
+<body class="custom-cursor">
 
     <!-- cursor style  -->
     <div class="custom-cursor__cursor"></div>
@@ -31,32 +31,15 @@
 
     <!-- Preloader-->
     <div id="preloader">
-        <div class="book">
-            <div class="inner">
-                <div class="left"></div>
-                <div class="middle"></div>
-                <div class="right"></div>
-            </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="spinner">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
 
@@ -76,20 +59,14 @@
                             </div>
                             <div class="main-menu__nav">
                                 <ul class="main-menu__list">
-                                    <li><a href="index.html" class="active">Home</a></li>
+                                    <li><a href="index.html">Home</a></li>
                                     <li><a href="courses.html">Courses</a></li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="about.html" class="active">About</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="main-menu__right">
-                            <a href="#" class="main-menu__search search-toggler">
-                                <i class="fal fa-search"></i>
-                            </a>
-                            <a href="login.html" class="main-menu__login">
-                                <i class="fal fa-user"></i>
-                            </a>
                             <a href="contact.html" class="educate-btn sm d-xl-flex d-none"><span
                                     class="educate-btn__curve"></span>Enroll Now</a>
                             <a href="#" class="main-menu__toggler mobile-nav__toggler">
@@ -183,7 +160,13 @@
                     <div class="col-lg-6">
                         <div class="educate-tilt"
                             data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 2, "speed": 700, "scale": 1 }'>
-                            <img src="assets/media/resources/about-1.png" alt="">
+                            <div class="about-image-wrapper text-center">
+                                <img src="assets/media/ceo.jpeg" alt="Midlaj Gulzar - CEO & Founder"
+                                    class="img-fluid rounded-4 shadow-lg mb-3"
+                                    style="max-height: 500px; object-fit: cover;">
+                                <h5 class="fw-bold mt-2">Midlaj Gulzar</h5>
+                                <p class="text-muted">CEO & Founder</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,42 +178,21 @@
         <footer>
             <div class="container">
                 <p class="mb-1">© 2025 MJ Institute of Technology. All Rights Reserved.</p>
-                <p>Call: <a href="tel:+919037999887" class="text-primary text-decoration-none fw-bold">+91 98765
-                        43210</a></p>
+                <p class="mb-1">Call: <a href="tel:+919037999887" class="text-primary text-decoration-none fw-bold">+91
+                        90379
+                        99887</a></p>
+                <div class="social-links mt-3">
+                    <a href="https://www.instagram.com/mj.institute._/" target="_blank" class="text-primary me-3"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                </div>
             </div>
         </footer>
         <!-- Footer Area End -->
 
     </div>
 
-    <!-- Mobile Menu Start -->
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/media/logo-light.png" alt="educate"></a>
-            </div>
-            <div class="mobile-nav__container"></div>
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:example@company.com">example@company.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:+12345678">+123 (4567) -890</a>
-                </li>
-            </ul>
-            <div class="mobile-nav__social">
-
-                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile Menu End -->
 
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
@@ -250,6 +212,27 @@
         </svg>
     </a>
     <!-- back-to-top-end -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/media/logo.png" width="155" alt="" /></a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:+919037999887">+91 90379 99887</a>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/mj.institute._/" target="_blank">Instagram</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Jquery Js -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

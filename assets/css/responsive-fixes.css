@@ -1,10 +1,10 @@
 /* ============================================
-   RESPONSIVE FIXES FOR MENU AND FOOTER
+   RESPONSIVE FIXES - ALL PAGES
    ============================================ */
 
-/* Mobile Menu Button - Ensure Visibility */
+/* Mobile Menu Button Fix */
 .mobile-nav__toggler {
-    display: none !important;
+    display: none;
     position: relative;
     z-index: 1000;
     background: transparent;
@@ -19,45 +19,18 @@
     }
 }
 
-/* Ensure menu button icon is visible */
 .mobile-nav__toggler i {
     font-size: 24px;
-    color: var(--text-primary);
+    color: var(--text-primary, #2c3e50);
 }
 
-/* Footer Responsive Fixes */
-footer {
-    text-align: center;
-    padding: 24px 16px !important;
+/* Header Fixes */
+.main-menu {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 0;
 }
 
-footer p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-
-footer a {
-    word-break: break-word;
-    display: inline-block;
-}
-
-/* Mobile Footer Adjustments */
-@media (max-width: 768px) {
-    footer {
-        padding: 20px 12px !important;
-    }
-
-    footer p {
-        font-size: 13px;
-    }
-
-    footer a {
-        font-size: 14px;
-    }
-}
-
-/* Ensure header is responsive */
 @media (max-width: 1199px) {
     .main-menu__nav {
         display: none;
@@ -69,10 +42,9 @@ footer a {
     }
 }
 
-/* Fix header spacing on mobile */
 @media (max-width: 768px) {
     .main-menu {
-        padding: 12px 0;
+        padding: 10px 0;
     }
 
     .main-menu__logo img {
@@ -80,8 +52,137 @@ footer a {
     }
 }
 
-/* CTA Section Responsive */
+/* Page Title Banner / Breadcrumbs Fix */
+.page_title_banner {
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page_title_banner h1 {
+    color: #2c3e50 !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
+    .page_title_banner {
+        padding: 40px 0;
+    }
+
+    .page_title_banner h1 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Footer Responsive */
+footer {
+    background: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 16px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #ffffff !important;
+    word-break: break-word;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: #0066cc !important;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 20px 12px;
+    }
+
+    footer p {
+        font-size: 13px;
+    }
+}
+
+/* Course Cards Responsive */
+.course__card {
+    margin-bottom: 24px;
+}
+
+@media (max-width: 991px) {
+    .course__card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Contact Cards Responsive */
+.contact_link_block {
+    padding: 24px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact_link_block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991px) {
+    .contact_link_block {
+        margin-bottom: 20px;
+    }
+}
+
+/* Form Responsive */
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+    .form-control {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+}
+
+/* Button Responsive */
+.educate-btn {
+    padding: 14px 32px;
+    font-size: 16px;
+}
+
+@media (max-width: 576px) {
+    .educate-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+/* CTA Section Responsive */
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 60px 0;
+    }
+
     .cta-section h2 {
         font-size: 1.75rem !important;
     }
@@ -91,20 +192,109 @@ footer a {
     }
 
     .cta-section .btn {
-        padding: 12px 24px !important;
-        font-size: 14px !important;
+        padding: 12px 24px;
+        font-size: 14px;
         margin-bottom: 12px;
+        width: 100%;
     }
 }
 
-/* Fix button wrapping on mobile */
+/* Gallery Responsive */
+.gallery-item {
+    margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        margin-bottom: 16px;
+    }
+}
+
+/* About Cards Responsive */
+.about__card {
+    margin-bottom: 24px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .about__card {
+        padding: 16px;
+    }
+}
+
+/* Feature Cards Responsive */
+.feature__card {
+    padding: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .feature__card {
+        padding: 20px;
+    }
+}
+
+/* General Responsive Utilities */
 @media (max-width: 576px) {
     .btn-lg {
         width: 100%;
-        margin-bottom: 12px !important;
+        margin-bottom: 12px;
     }
 
     .me-3 {
         margin-right: 0 !important;
+    }
+}
+
+/* Fix Filter Row on Courses Page */
+.filter_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .filter_row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter_row .left_block,
+    .filter_row .right_block {
+        width: 100%;
+    }
+}
+
+/* Ensure Images are Responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container Padding on Mobile */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Section Spacing */
+.py-60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .py-60 {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
