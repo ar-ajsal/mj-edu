@@ -31,6 +31,17 @@
     padding: 12px 0;
 }
 
+@media (max-width: 576px) {
+
+    /* Mobile Card Padding Optimization */
+    .contact_link_block,
+    .course__card,
+    .about__card,
+    .feature__card {
+        padding: 16px !important;
+    }
+}
+
 @media (max-width: 1199px) {
     .main-menu__nav {
         display: none;

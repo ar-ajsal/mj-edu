@@ -1328,7 +1328,8 @@ strong {
     display: grid;
     align-content: center;
     z-index: 9999999;
-    background: #6366f1;
+    background: #27246B;
+    /* Brand Primary */
 }
 
 .spinner {
@@ -1348,9 +1349,10 @@ strong {
     left: var(--left);
     width: 35px;
     height: 7px;
-    background: #ffff;
+    background: #FAC800;
+    /* Brand Secondary */
     animation: dominos 1s ease infinite;
-    box-shadow: 2px 2px 3px 0px black;
+    box-shadow: none;
 }
 
 .spinner span:nth-child(1) {
@@ -6831,5 +6833,3 @@ footer {
     padding: 40px 0;
     text-align: center;
 }
-
-

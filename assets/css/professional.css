@@ -10,48 +10,66 @@
    ROOT VARIABLES - PROFESSIONAL PALETTE
    ============================================ */
 :root {
-    /* Colors */
-    /* Colors - Modern Indigo Theme */
-    --primary-accent: #6366f1;
-    /* Indigo 500 */
-    --primary-dark: #4338ca;
-    /* Indigo 700 */
-    --text-primary: #1e293b;
-    /* Slate 800 */
-    --text-secondary: #5a6c7d;
-    --text-light: #7f8c9a;
-    --bg-white: #ffffff;
-    --bg-light: #f8f9fa;
-    --bg-lighter: #f5f7f9;
-    --border-color: #e0e0e0;
-    --border-light: #eff1f3;
+    /* Colors - Brand Theme */
+    --primary-accent: #27246B;
+    /* Brand Blue - Trust, Competence */
+    --primary-dark: #1a184a;
+    /* Deep Blue - Authority */
+    --secondary-accent: #FAC800;
+    /* Brand Yellow - Optimism (Use sparingly) */
 
-    /* Spacing */
-    --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 32px;
-    --space-xl: 48px;
-    --space-2xl: 64px;
-    --space-3xl: 96px;
+    /* Neutrals - Clean & readable */
+    --text-primary: #0f172a;
+    /* High contrast for readability */
+    --text-secondary: #475569;
+    /* Softer for paragraphs */
+    --text-light: #94a3b8;
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    /* Cool light grey */
+    --bg-lighter: #f1f5f9;
+    --border-color: #e2e8f0;
+    /* Subtle borders */
+    --border-light: #f1f5f9;
+
+    /* Spacing - Mobile Friendly base units */
+    --space-xs: 0.5rem;
+    /* 8px */
+    --space-sm: 1rem;
+    /* 16px */
+    --space-md: 1.5rem;
+    /* 24px */
+    --space-lg: 2rem;
+    /* 32px */
+    --space-xl: 3rem;
+    /* 48px */
+    --space-2xl: 4rem;
+    /* 64px */
+    --space-3xl: 5rem;
+    /* 80px */
 
     /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+    /* Shadows - Soft & Modern */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
 
     /* Border Radius */
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --radius-sm: 0.375rem;
+    /* 6px */
+    --radius-md: 0.75rem;
+    /* 12px - Friendly standard */
+    --radius-lg: 1rem;
+    /* 16px - Cards */
+    --radius-pill: 9999px;
 }
 
 /* ============================================
@@ -154,12 +172,12 @@ p {
    SECTION SPACING
    ============================================ */
 section {
-    padding: var(--space-3xl) 0 !important;
+    padding: var(--space-xl) 0 !important;
 }
 
 .py-60 {
-    padding-top: var(--space-3xl) !important;
-    padding-bottom: var(--space-3xl) !important;
+    padding-top: var(--space-xl) !important;
+    padding-bottom: var(--space-xl) !important;
 }
 
 /* ============================================
@@ -168,14 +186,23 @@ section {
 .main-menu {
     background: var(--bg-white);
     border-bottom: 1px solid var(--border-light);
-    padding: var(--space-sm) 0;
+    padding: var(--space-xs) 0;
+    /* Reduced from space-sm */
 }
 
 .main-menu__list a {
-    color: var(--text-primary) !important;
-    font-weight: var(--font-weight-medium) !important;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
+    color: #000000 !important;
+    /* Pure black for max contrast */
+    font-weight: 700 !important;
+    /* Bold */
+    font-size: 1rem;
+    /* 16px standard */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    /* Optional: Make it stand out more */
+    padding: 10px 15px;
+    /* Increase click area */
+    transition: all 0.3s ease;
 }
 
 .main-menu__list a:hover,
@@ -188,8 +215,10 @@ section {
    ============================================ */
 .hero-banner-1 {
     background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
-    padding: var(--space-3xl) 0 !important;
-    min-height: 600px;
+    padding: var(--space-lg) 0 var(--space-2xl) 0 !important;
+    /* Reduced top padding significantly */
+    min-height: auto;
+    /* Allow content to dictate height */
     display: flex;
     align-items: center;
 }
@@ -202,7 +231,7 @@ section {
 }
 
 .hero-banner-1 .fm-sec {
-    color: var(--primary-accent) !important;
+    color: var(--secondary-accent) !important;
 }
 
 .hero-banner-1 h4 {
@@ -257,7 +286,7 @@ section {
 
 .form-control:focus {
     border-color: var(--primary-accent) !important;
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1) !important;
+    box-shadow: 0 0 0 3px rgba(39, 36, 107, 0.1) !important;
     outline: none !important;
 }
 
@@ -441,5 +470,55 @@ footer a:hover {
 /* Ensure overlay allows closing but doesn't block content interactions if mis-layered */
 .mobile-nav__wrapper .mobile-nav__content {
     z-index: 10001 !important;
-    /* Higher than cursor if needed, but standard is fine */
+}
+
+/* ============================================
+   BRAND COLOR OVERRIDES
+   ============================================ */
+.fm-sec,
+.section-title span {
+    color: var(--secondary-accent) !important;
+}
+
+.cta-section {
+    background: var(--primary-accent) !important;
+    color: var(--bg-white) !important;
+}
+
+.btn-primary-custom,
+.btn-primary {
+    background: var(--primary-accent) !important;
+    border-color: var(--primary-accent) !important;
+}
+
+.btn-primary-custom:hover {
+    background: var(--primary-dark) !important;
+}
+
+.text-primary,
+.color-primary,
+.section-subtitle {
+    color: var(--primary-accent) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-accent) !important;
+}
+
+/* Custom Cursor brand colors */
+.custom-cursor__cursor {
+    border-color: var(--primary-accent) !important;
+}
+
+.custom-cursor__cursor-two {
+    background-color: var(--secondary-accent) !important;
+}
+
+.play-btn {
+    background-color: var(--secondary-accent) !important;
+    color: var(--primary-accent) !important;
+}
+
+.footer a.text-primary {
+    color: var(--secondary-accent) !important;
 }
