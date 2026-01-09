@@ -21,14 +21,31 @@
 
 .mobile-nav__toggler i {
     font-size: 24px;
-    color: var(--text-primary, #2c3e50);
+    color: var(--text-primary, #ffffff) !important;
+    /* Changed to white for dark menu */
 }
 
-/* Header Fixes */
+/* Header Fixes - Dark Mode for Visibility */
 .main-menu {
-    background: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
+    background: #27246B !important;
+    /* Brand Primary */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 12px 0;
+}
+
+.main-menu .main-menu__list>li>a {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+.main-menu .main-menu__list>li>a:hover,
+.main-menu .main-menu__list>li>a.active {
+    color: #FAC800 !important;
+    /* Brand Secondary */
+}
+
+.main-menu__toggler i {
+    color: #ffffff !important;
 }
 
 @media (max-width: 576px) {
@@ -117,7 +134,7 @@ footer a:hover {
         padding: 20px 12px;
     }
 
-    footer p {
+    .footer p {
         font-size: 13px;
     }
 }

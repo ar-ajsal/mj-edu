@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="assets/vendor/odometer/odometer.min.css">
     <link rel="stylesheet" href="assets/vendor/nice-select/nice-select.css">
     <link rel="stylesheet" href="assets/css/app.css">
-    <link rel="stylesheet" href="assets/css/professional.css">
+    <!-- <link rel="stylesheet" href="assets/css/professional.css"> -->
+    <link rel="stylesheet" href="assets/css/premium.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
@@ -155,164 +156,69 @@
                             during business days.
                         </p>
                     </form> -->
-<<<<<<< HEAD
-                    <!-- hgagjsd -->
-                    <form id="contactForm" class="contact-form">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="mb-24">
-                <input
-                    type="text"
-                    class="form-control p_lg"
-                    id="name"
-                    required
-                    placeholder="Full Name"
-                />
-            </div>
-        </div>
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form glass-panel p-4 rounded-3">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="mb-24">
+                                        <label for="name" class="form-label visually-hidden">Full Name</label>
+                                        <input type="text" class="form-control p_lg" id="name" required
+                                            placeholder="Full Name" />
+                                    </div>
+                                </div>
 
-        <div class="col-sm-6">
-            <div class="mb-24">
-                <input
-                    type="tel"
-                    class="form-control p_lg"
-                    id="phone"
-                    required
-                    placeholder="Phone Number"
-                />
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="mb-24">
-                <input
-                    type="email"
-                    class="form-control p_lg"
-                    id="email"
-                    required
-                    placeholder="Email Address"
-                />
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="mb-24">
-                <select class="form-control p_lg" id="course" required>
-                    <option value="" disabled selected>
-                        Select Preferred Batch Timing
-                    </option>
-                    <option value="10:00 AM - 12:00 PM">
-                        10:00 AM to 12:00 PM
-                    </option>
-                    <option value="12:00 PM - 2:00 PM">
-                        12:00 PM to 2:00 PM
-                    </option>
-                    <option value="2:00 PM - 4:00 PM">
-                        2:00 PM to 4:00 PM
-                    </option>
-                    <option value="4:00 PM - 5:30 PM">
-                        4:00 PM to 5:30 PM
-                    </option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="mb-24">
-        <textarea
-            class="form-control p_lg"
-            id="message"
-            rows="5"
-            placeholder="Additional Message (Optional)"
-        ></textarea>
-    </div>
-
-    <div class="text-end">
-        <button type="submit" class="educate-btn">
-            <span class="educate-btn__curve"></span>
-            Send to WhatsApp
-        </button>
-    </div>
-
-    <p class="text-muted small mt-3">
-        <i class="fas fa-info-circle me-2"></i>
-        Your enquiry will be sent directly to our WhatsApp. We typically respond
-        within a few hours during business days.
-    </p>
-</form>
-
-                    <!-- agjhgajs -->
-=======
-                    <form id="contactForm" class="contact-form">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="mb-24">
-                                    <input type="text" class="form-control p_lg" id="name" required
-                                        placeholder="Full Name" />
+                                <div class="col-sm-6">
+                                    <div class="mb-24">
+                                        <label for="phone" class="form-label visually-hidden">Phone Number</label>
+                                        <input type="tel" class="form-control p_lg" id="phone" required
+                                            placeholder="Phone Number" />
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <div class="mb-24">
-                                    <input type="tel" class="form-control p_lg" id="phone" required
-                                        placeholder="Phone Number" />
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="mb-24">
+                                        <label for="email" class="form-label visually-hidden">Email Address</label>
+                                        <input type="email" class="form-control p_lg" id="email" required
+                                            placeholder="Email Address" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb-24">
+                                        <label for="course" class="form-label visually-hidden">Batch Timing</label>
+                                        <select class="form-control p_lg" id="course" required>
+                                            <option value="" disabled selected>Select Preferred Batch Timing</option>
+                                            <option value="10:00 AM - 12:00 PM">10:00 AM to 12:00 PM</option>
+                                            <option value="12:00 PM - 2:00 PM">12:00 PM to 2:00 PM</option>
+                                            <option value="2:00 PM - 4:00 PM">2:00 PM to 4:00 PM</option>
+                                            <option value="4:00 PM - 5:30 PM">4:00 PM to 5:30 PM</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="mb-24">
-                                    <input type="email" class="form-control p_lg" id="email" required
-                                        placeholder="Email Address" />
-                                </div>
+                            <div class="mb-24">
+                                <label for="message" class="form-label visually-hidden">Message</label>
+                                <textarea class="form-control p_lg" id="message" rows="5"
+                                    placeholder="Additional Message (Optional)"></textarea>
                             </div>
 
-                            <div class="col-sm-6">
-                                <div class="mb-24">
-                                    <select class="form-control p_lg" id="course" required>
-                                        <option value="" disabled selected>
-                                            Select Preferred Batch Timing
-                                        </option>
-                                        <option value="10:00 AM - 12:00 PM">
-                                            10:00 AM to 12:00 PM
-                                        </option>
-                                        <option value="12:00 PM - 2:00 PM">
-                                            12:00 PM to 2:00 PM
-                                        </option>
-                                        <option value="2:00 PM - 4:00 PM">
-                                            2:00 PM to 4:00 PM
-                                        </option>
-                                        <option value="4:00 PM - 5:30 PM">
-                                            4:00 PM to 5:30 PM
-                                        </option>
-                                    </select>
-                                </div>
+                            <div class="text-end">
+                                <button type="submit" class="educate-btn w-100 w-sm-auto">
+                                    <span class="educate-btn__curve"></span>
+                                    Send to WhatsApp
+                                </button>
                             </div>
-                        </div>
 
-                        <div class="mb-24">
-                            <textarea class="form-control p_lg" id="message" rows="5"
-                                placeholder="Additional Message (Optional)"></textarea>
-                        </div>
-
-                        <div class="text-end">
-                            <button type="submit" class="educate-btn">
-                                <span class="educate-btn__curve"></span>
-                                Send to WhatsApp
-                            </button>
-                        </div>
-
-                        <p class="text-muted small mt-3">
-                            <i class="fas fa-info-circle me-2 text-primary"></i>
-                            Your enquiry will be sent directly to our WhatsApp. We typically respond
-                            <strong>within a few hours</strong> during business days.
-                        </p>
-                    </form>
-
->>>>>>> 266682c (Update site pages, styles, and add lead popup script)
+                            <p class="text-muted small mt-3 text-center">
+                                <i class="fas fa-info-circle me-2 text-primary"></i>
+                                Your enquiry will be sent directly to our WhatsApp. We typically respond <strong>within
+                                    a few hours</strong> during business days.
+                            </p>
+                        </form>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="educate-tilt"
