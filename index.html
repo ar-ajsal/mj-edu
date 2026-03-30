@@ -62,24 +62,220 @@
       ]
     }
     </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+    :root {
+      --navy: #1C2370;
+      --gold: #F5C400;
+      --black: #0a0a0a;
+      --grey: #999;
+      --light: #f5f5f7;
+    }
+
+    /* ── LOADER SCREEN ── */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    #loader.out { opacity: 0; pointer-events: none; }
+
+    /* ─── LOGO ─── */
+    .logo-wrap {
+      opacity: 0;
+      transform: scale(0.92);
+      animation: logoIn 0.9s cubic-bezier(0.34,1.4,0.64,1) 0.1s forwards;
+    }
+    @keyframes logoIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .logo-svg { display: block; width: 96px; height: 96px; }
+
+    /* cap float */
+    .cap { animation: capFloat 3.5s ease-in-out 1s infinite; transform-box: fill-box; transform-origin: center bottom; }
+    @keyframes capFloat {
+      0%,100% { transform: translateY(0px); }
+      50%      { transform: translateY(-4px); }
+    }
+    /* tassel */
+    .tassel { animation: tassleSwing 2.8s ease-in-out 1s infinite; transform-box: fill-box; transform-origin: top center; }
+    @keyframes tassleSwing {
+      0%,100% { transform: rotate(-7deg); }
+      50%      { transform: rotate(7deg); }
+    }
+
+    /* ─── WORDMARK ─── */
+    .wordmark {
+      margin-top: 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: fadeSlide 0.6s ease 0.5s forwards;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .wordmark-title {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--black);
+    }
+    .wordmark-title b { color: var(--navy); font-weight: 600; }
+    .wordmark-sub {
+      margin-top: 3px;
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    /* ─── THIN RULE ─── */
+    .rule {
+      margin-top: 30px;
+      width: 0;
+      height: 1px;
+      background: #d8d8d8;
+      animation: ruleExpand 0.6s ease 0.85s forwards;
+    }
+    @keyframes ruleExpand { to { width: 200px; } }
+
+    /* ─── PROGRESS ─── */
+    .progress-area {
+      margin-top: 30px;
+      width: 200px;
+      opacity: 0;
+      animation: fadeSlide 0.5s ease 1.1s forwards;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .track {
+      width: 100%;
+      height: 1px;
+      background: #dedede;
+      position: relative;
+      overflow: hidden;
+      border-radius: 99px;
+    }
+    .bar {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 0%;
+      background: linear-gradient(90deg, var(--navy), var(--gold));
+      border-radius: 99px;
+      transition: width 0.08s linear;
+    }
+
+    /* ─── LABELS ─── */
+    .meta {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .meta-status {
+      font-size: 8.5px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #b0b0b0;
+      transition: opacity 0.3s ease;
+    }
+    .meta-pct {
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #c0c0c0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    @keyframes fadeSlide {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
 </head>
 
 <body class="custom-cursor">
     <!-- cursor style -->
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
-    <!-- Preloader-->
-    <div id="preloader">
-        <div class="spinner">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- Preloader -->
+    <div id="loader">
+
+      <!-- LOGO MARK -->
+      <div class="logo-wrap">
+        <svg class="logo-svg" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- ── M (navy) ── -->
+          <polygon fill="#1C2370" points="
+            3,84
+            3,38
+            15,38
+            33,62
+            51,38
+            63,38
+            63,84
+            51,84
+            51,55
+            33,75
+            15,55
+            15,84
+          "/>
+
+          <!-- ── J (gold) ── -->
+          <path fill="#F5C400" d="
+            M57,38 L80,38 L80,74
+            Q80,90 66,94
+            Q53,98 46,88
+            L46,76
+            Q51,83 59,80
+            Q67,77 67,70
+            L67,50 L57,50 Z
+          "/>
+
+          <!-- ── GRADUATION CAP ── -->
+          <g class="cap">
+            <rect x="25" y="7"  width="44" height="9" rx="1.5" fill="#111"/>
+            <polygon fill="#111" points="6,27  48,13  90,27  48,41"/>
+            <circle cx="48" cy="7" r="3.8" fill="#111"/>
+          </g>
+
+          <!-- tassel (swings separately) -->
+          <g class="tassel">
+            <line x1="70" y1="24" x2="70" y2="45" stroke="#111" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="70" cy="48" r="3.5" fill="#111"/>
+          </g>
+
+        </svg>
+      </div>
+
+      <!-- WORDMARK -->
+      <div class="wordmark">
+        <div class="wordmark-title"><b>MJ</b> Institution</div>
+        <div class="wordmark-sub">of Technology</div>
+      </div>
+
+      <!-- RULE -->
+      <div class="rule"></div>
+
+      <!-- PROGRESS -->
+      <div class="progress-area">
+        <div class="track">
+          <div class="bar" id="bar"></div>
         </div>
+        <div class="meta">
+          <span class="meta-status" id="status">Initializing</span>
+          <span class="meta-pct" id="pct">0%</span>
+        </div>
+      </div>
+
     </div>
     <!-- Main Wrapper Start -->
     <div id="main-wrapper" class="main-wrapper">
@@ -475,55 +671,90 @@
                             class="educate-btn__curve"></span>View All</a>
                 </div>
                 <div class="row">
-                    <!-- Creative Arts -->
+                    <!-- Graphic Design & Typing -->
                     <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="150ms">
                         <div class="course__category__card_1 mb-24">
                             <div class="course__category__card_text">
-                                <a href="courses.html" class="course__category__card_title h4 mb-16">Editing</a>
-                                <p class="mb-40">Master the art of video post-production with professional editing
-                                    techniques.</p>
+                                <a href="courses.html" class="course__category__card_title h4 mb-16">Graphic Design &amp; Typing</a>
+                                <p class="mb-40">Master visual communication using Photoshop, Illustrator, InDesign &amp; CorelDraw with professional typing skills.</p>
                                 <ul class="category__info p-0 mb-8">
                                     <li><i class="fas fa-star"></i>5</li>
-                                    <!-- <li><i class="fal fa-graduation-cap"></i>10 Teachers</li> -->
-                                    <!-- <li><i class="fal fa-clock"></i>60+</li> -->
+                                    <li><i class="fal fa-clock"></i>3 Months</li>
                                 </ul>
                             </div>
-                            <img src="assets/media/courses/categories/c-4.png" alt="" class="image">
+                            <img src="assets/media/courses/categories/c-3.png" alt="Graphic Design Course" class="image">
                         </div>
                     </div>
 
-                    <!-- Graphic Design -->
+                    <!-- Video Editing -->
                     <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="course__category__card_1 mb-24">
                             <div class="course__category__card_text">
-                                <a href="courses.html" class="course__category__card_title h4 mb-16">Graphic Design</a>
-                                <p class="mb-40">Learn visual communication using industry-standard tools for impactful
-                                    designs.</p>
+                                <a href="courses.html" class="course__category__card_title h4 mb-16">Video Editing</a>
+                                <p class="mb-40">Master the art of video post-production with professional editing techniques used in top studios.</p>
                                 <ul class="category__info p-0 mb-8">
                                     <li><i class="fas fa-star"></i>5</li>
-                                    <!-- <li><i class="fal fa-graduation-cap"></i>10 Teachers</li> -->
-                                    <!-- <li><i class="fal fa-clock"></i>60+</li> -->
                                 </ul>
                             </div>
-                            <img src="assets/media/courses/categories/c-3.png" alt="" class="image">
+                            <img src="assets/media/courses/categories/c-4.png" alt="Video Editing Course" class="image">
+                        </div>
+                    </div>
+
+                    <!-- Professional Accounting -->
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="450ms">
+                        <div class="course__category__card_1 mb-24">
+                            <div class="course__category__card_text">
+                                <a href="courses.html" class="course__category__card_title h4 mb-16">Professional Accounting</a>
+                                <p class="mb-40">Indian &amp; foreign accounting — Tally Prime, GST, SAP, QuickBooks, Zoho Books &amp; International Standards (IFRS).</p>
+                                <ul class="category__info p-0 mb-8">
+                                    <li><i class="fas fa-star"></i>5</li>
+                                    <li><i class="fal fa-clock"></i>3 Months</li>
+                                </ul>
+                            </div>
+                            <img src="assets/media/courses/categories/c-1.png" alt="Accounting Course" class="image">
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="600ms">
+                        <div class="course__category__card_1 mb-24">
+                            <div class="course__category__card_text">
+                                <a href="courses.html" class="course__category__card_title h4 mb-16">Digital Marketing</a>
+                                <p class="mb-40">Navigate the digital frontier with SEO, Social Media Marketing (SMM), Content Strategy, Google Ads &amp; Analytics.</p>
+                                <ul class="category__info p-0 mb-8">
+                                    <li><i class="fas fa-star"></i>5</li>
+                                    <li><i class="fal fa-clock"></i>4 Months</li>
+                                </ul>
+                            </div>
+                            <img src="assets/media/courses/categories/c-2.png" alt="Digital Marketing Course" class="image">
+                        </div>
+                    </div>
+
+                    <!-- Teacher Training -->
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="750ms">
+                        <div class="course__category__card_1 mb-24">
+                            <div class="course__category__card_text">
+                                <a href="courses.html" class="course__category__card_title h4 mb-16">Teacher Training</a>
+                                <p class="mb-40">Professional teacher development program equipping educators with modern teaching skills, pedagogy &amp; digital tools.</p>
+                                <ul class="category__info p-0 mb-8">
+                                    <li><i class="fas fa-star"></i>5</li>
+                                </ul>
+                            </div>
+                            <img src="assets/media/courses/categories/c-6.png" alt="Teacher Training Course" class="image">
                         </div>
                     </div>
 
                     <!-- Artificial Intelligence -->
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="450ms">
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="900ms">
                         <div class="course__category__card_1 mb-24 mb-xl-0">
                             <div class="course__category__card_text">
-                                <a href="courses.html" class="course__category__card_title h4 mb-16">Artificial
-                                    Intelligence</a>
-                                <p class="mb-40">Explore the capabilities of AI to enhance creativity and automate
-                                    workflows.</p>
+                                <a href="courses.html" class="course__category__card_title h4 mb-16">Artificial Intelligence</a>
+                                <p class="mb-40">Explore the capabilities of AI to enhance creativity, automate workflows and future-proof your career.</p>
                                 <ul class="category__info p-0 mb-8">
                                     <li><i class="fas fa-star"></i>5</li>
-                                    <!-- <li><i class="fal fa-graduation-cap"></i>10 Teachers</li> -->
-                                    <!-- <li><i class="fal fa-clock"></i>60+</li> -->
                                 </ul>
                             </div>
-                            <img src="assets/media/courses/categories/c-5.png" alt="" class="image">
+                            <img src="assets/media/courses/categories/c-5.png" alt="AI Course" class="image">
                         </div>
                     </div>
                 </div>
@@ -806,6 +1037,49 @@
                 Introduction Video
             </div>
         </div>
+        <!-- Loader Script -->
+        <script>
+        (function () {
+          const bar    = document.getElementById('bar');
+          const status = document.getElementById('status');
+          const pct    = document.getElementById('pct');
+          const loader = document.getElementById('loader');
+
+          const stages = [
+            { at: 0,   label: 'Initializing'  },
+            { at: 28,  label: 'Loading Assets' },
+            { at: 58,  label: 'Preparing'      },
+            { at: 82,  label: 'Almost Ready'   },
+            { at: 100, label: 'Welcome'        },
+          ];
+          let prev = 0, val = 0;
+
+          function updateStatus(v) {
+            let label = stages[0].label;
+            for (let s of stages) { if (v >= s.at) label = s.label; }
+            if (label !== status.textContent) {
+              status.style.opacity = 0;
+              setTimeout(() => { status.textContent = label; status.style.opacity = 1; }, 220);
+            }
+          }
+
+          const id = setInterval(() => {
+            const spd = val < 40 ? 1.3 : val < 72 ? 0.85 : val < 92 ? 0.45 : 0.18;
+            val = Math.min(100, val + spd + Math.random() * 0.7);
+
+            if (bar && pct && loader && status) {
+                bar.style.width = val + '%';
+                pct.textContent  = Math.floor(val) + '%';
+                updateStatus(val);
+
+                if (val >= 100) {
+                  clearInterval(id);
+                  setTimeout(() => loader.classList.add('out'), 600);
+                }
+            }
+          }, 52);
+        })();
+        </script>
 </body>
 
 </html>
