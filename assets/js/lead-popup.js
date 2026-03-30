@@ -194,11 +194,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         <label>Interested Course</label>
                         <select id="lead-course" class="modern-input modern-select">
                             <option value="" disabled selected>Select your interest...</option>
-                            <option value="Graphic Design">Graphic Design (Photoshop, Illustrator, etc.)</option>
+                            <option value="Adobe Photoshop">Adobe Photoshop – Graphic Design & Photo Editing</option>
+                            <option value="Adobe Illustrator">Adobe Illustrator – Logo & Brand Identity</option>
+                            <option value="Adobe InDesign">Adobe InDesign – Print & Digital Publishing</option>
+                            <option value="CorelDRAW">CorelDRAW – Signage & Packaging</option>
                             <option value="Video Editing">Video Editing & Motion Graphics</option>
-                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Indian Accounting">Indian Accounting (Tally, GST, Income Tax)</option>
+                            <option value="Foreign Accounting">Foreign Accounting (SAP, QuickBooks, IFRS)</option>
+                            <option value="Digital Marketing">Digital Marketing (SEO, SMM, Google Ads)</option>
                             <option value="Typing Skills">Typing Skills & Data Entry</option>
-                            <option value="Web Development">Web Development</option>
+                            <option value="Teacher Training">Teacher Training – Educator Development</option>
+                            <option value="Hospital Administration">Hospital Administration</option>
                             <option value="Other">Other / General Enquiry</option>
                         </select>
                     </div>
